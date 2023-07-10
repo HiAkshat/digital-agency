@@ -33,3 +33,17 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.move{
+  animation: move 3s infinite ease alternate;
+}
+
+@keyframes move{
+  from{
+    transform: translateY(-15px);
+  }
+
+  to{
+    transform: translateY(0px);
+  }
+}

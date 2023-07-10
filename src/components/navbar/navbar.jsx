@@ -1,4 +1,8 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import {  useEffect, useState } from "react"
 
 const links = [
   {
@@ -34,19 +38,28 @@ const links = [
 ]
 
 export default function Navbar() {
+  const currentPath = usePathname()
+  const [pathname, setPathname] = useState("")
+
+  useEffect(() => {
+    setPathname(currentPath)
+  }, [currentPath])
+
   return (
     <div className="flex justify-between items-center h-[100px]">
       <div>
-        <span className="text-lg"><span className="font-bold">AkG</span>ENCY</span>
+        <Link href="/">
+          <span className="text-lg"><span className="font-bold">AkG</span>ENCY</span>
+        </Link>
       </div>
       <div className="flex items-center gap-4">
         {links.map(link => (
-          <Link key={link.id} href={link.route}>
+          <Link className={pathname === link.route ? 'text-[#3bad75] hover:text-[#3bad75]' : 'hover:text-[#3bad75]'} key={link.id} href={link.route}>
             {link.name}
           </Link>
         ))}
 
-        <button className="py-1 px-2 bg-[#3bad75] rounded-md text-white min-w-max">Log Out</button>
+        <button className="py-1 px-2 bg-[#3bad75] hover:bg-[#369c78] rounded-md text-white min-w-max">Log Out</button>
       </div>
     </div>
   )

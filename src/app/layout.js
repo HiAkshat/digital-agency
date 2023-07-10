@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className='body-container'>
+        <div className='body-container gap-6'>
+          {/* <div className='flex flex-col'> */}
+          {/* </div> */}
           <Navbar />
           {children}
           <Footer />
