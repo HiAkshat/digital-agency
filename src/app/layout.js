@@ -3,6 +3,8 @@ import './globals.css'
 
 import Navbar from '@/components/navbar/navbar'
 import Footer from '@/components/footer/footer'
+import { ThemeProvider } from "@/context/ThemeContext";
+
 
 // const inter = Inter({
 //   weight: ['300', '400', '500', '600', '700'],
@@ -18,13 +20,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className='body-container gap-6'>
-          {/* <div className='flex flex-col'> */}
-          {/* </div> */}
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className='body-container gap-6'>
+            {/* <div className='flex flex-col'> */}
+            {/* </div> */}
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

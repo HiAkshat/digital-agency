@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {  useEffect, useState } from "react"
+import ThemeToggle from "../themeToggle/themeToggle"
 
 const links = [
   {
@@ -53,6 +54,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="flex items-center gap-4">
+        <ThemeToggle />
         {links.map(link => (
           <Link className={pathname === link.route ? 'text-[#3bad75] hover:text-[#3bad75]' : 'hover:text-[#3bad75]'} key={link.id} href={link.route}>
             {link.name}
