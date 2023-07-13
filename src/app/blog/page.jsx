@@ -1,11 +1,20 @@
+"use client"
+
 import Image from "next/image"
 import styles from "./page.module.css"
 import Link from "next/link"
+import { ThemeContext } from "../../context/ThemeContext";
+import { useContext } from "react";
 
 export default function Blog() {
+  const {mode} = useContext(ThemeContext);
+  const workTitleClasses = mode==="light" ?
+  `${styles.light} work-title text-8xl font-bold py-2` :
+  `${styles.dark} work-title text-8xl font-bold py-2`
+
   return (
     <div className='flex flex-col gap-6'>
-      <span className={`${styles.workTitle} work-title text-8xl font-bold py-2`}>Blog Posts</span>
+      <span className={workTitleClasses}>Blog Posts</span>
       <div className="flex flex-col gap-12">
         <Link href="blog/test">
           <div className="flex gap-16 items-center">
