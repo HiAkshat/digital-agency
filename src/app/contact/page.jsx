@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <div className="flex gap-6 flex-col">
       <div className="flex justify-center">
-        <span className="text-6xl font-bold">Let's Keep in Touch</span>
+        <span className="text-6xl font-bold">Let&apos;s Keep in Touch</span>
       </div>
       <div className="flex items-center gap-16">
         <div className="flex-1 relative w-full h-[500px]">
