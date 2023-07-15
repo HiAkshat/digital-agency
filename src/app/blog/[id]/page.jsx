@@ -4,8 +4,19 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Link from 'next/link';
 
 import Image from "next/image";
+import useSWR from 'swr'
+import { notFound } from 'next/navigation';
 
-export default function BlogPost() {
+const fetcher = (...args) => fetch(...args).then(res => res.json())
+
+export default function BlogPost({params}) {
+  console.log(params.id)
+  const { data, error, isLoading } = useSWR(`https://jsonplaceholder.typicode.com/posts/${params.id}`, fetcher)
+  
+  if (error) return notFound()
+  if (isLoading) return <h1>Loading</h1>
+  if (Object.keys(data).length === 0) return notFound()
+
   return (
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-8'>
@@ -19,8 +30,8 @@ export default function BlogPost() {
       <div className="flex flex-col gap-12">
         <div className="flex gap-6 items-center">
           <div className="flex-1 flex flex-col gap-4">
-            <span className="text-4xl font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
-            <span className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim ex unde, corporis sunt magni explicabo aspernatur. Sit odit </span>
+            <span className="text-4xl font-bold">{data.title}</span>
+            <span className="">{data.body}</span>
             <div className="flex items-center gap-4">
               <div className="relative w-8 h-8 rounded-full">
                 <Image className="object-cover rounded-full" src="https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=640&h=200&dpr=1" fill={true} />
@@ -42,5 +53,6 @@ export default function BlogPost() {
         </p>
       </div>
     </div>
-  )
+    )
+
 }

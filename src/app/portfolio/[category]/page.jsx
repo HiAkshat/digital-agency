@@ -1,16 +1,16 @@
 "use client"
 
+import { notFound } from "next/navigation.js"
 import {items} from "./data.js"
 import WorkFeature from "@/components/workFeature/workFeature.jsx"
 
-export default function Category({params}) {
-  const getData = (category) => {
-    const data = items[category]
-    if (data){
-      return data
-    }
-  }
+const getData = (category) => {
+  const data = items[category]
+  if (data) return data
+  else return notFound()
+}
 
+export default function Category({params}) {
   const data = getData(params.category)
 
   return (
