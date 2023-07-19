@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from "next/image";
 import useSWR from 'swr'
 import { notFound } from 'next/navigation';
+import Loading from '../loading';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -14,7 +15,7 @@ export default function BlogPost({params}) {
   const { data, error, isLoading } = useSWR(`https://jsonplaceholder.typicode.com/posts/${params.id}`, fetcher)
   
   if (error) return notFound()
-  if (isLoading) return <h1>Loading</h1>
+  if (isLoading) return <Loading />
   if (Object.keys(data).length === 0) return notFound()
 
   return (
