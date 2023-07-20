@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from "next/image";
 import useSWR from 'swr'
 import { notFound } from 'next/navigation';
-import Loading from '../loading';
+import Loading from './loading';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 

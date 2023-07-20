@@ -39,6 +39,6 @@ export default function Blog() {
           </Link>
         ))}
       </div>
-  </div>
+    </div>
   )
 }
