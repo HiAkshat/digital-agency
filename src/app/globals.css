@@ -121,6 +121,12 @@ a {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 640px) {
+  .body-container{
+    padding: 30px;
+  }
+}
+
 .move{
   animation: move 3s infinite ease alternate;
 }
