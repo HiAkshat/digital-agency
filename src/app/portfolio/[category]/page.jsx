@@ -16,7 +16,7 @@ export default function Category({params}) {
   return (
     <div className="flex flex-col gap-16">
       {data.map(item => (
-        <WorkFeature classes='flex items-center gap-16 even:flex-row-reverse' key={item.id} title={item.title} desc={item.desc} image={item.image} />
+        <WorkFeature classes='flex items-center gap-16 flex-col-reverse md:flex-row' key={item.id} title={item.title} desc={item.desc} image={item.image} />
       ))}
     </div>
   )

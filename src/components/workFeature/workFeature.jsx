@@ -9,7 +9,7 @@ export default function WorkFeature({classes, title, desc, image}) {
         <span>{desc}</span>
         <Button url="/" text="See More" />
       </div>
-      <div className="relative flex-1 h-[500px]">
+      <div className="relative w-full md:flex-1 h-[500px]">
         <Image className="object-cover" src={image} fill={true} />
       </div>
     </div>
