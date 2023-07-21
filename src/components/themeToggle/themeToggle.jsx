@@ -12,11 +12,11 @@ export default function ThemeToggle(){
 
   return (
     <div onClick={toggle} 
-      className="cursor-pointer relative flex p-[2px] items-center border  rounded-full"
+      className="cursor-pointer relative flex p-[4px] md:p-[2px] items-center border rounded-full"
       style={mode==="light" ? {borderColor: '#111'} : {borderColor: '#bbb'}}
     >
-      <span className="text-sm">🌙</span>
-      <span className="text-sm">🌞</span>
+      <span className="text-xs md:text-sm">🌙</span>
+      <span className="text-xs md:text-sm">🌞</span>
       <div
         className={toggleClasses}
         // style={mode==="light" ? {left: '4px'} : {right: '4px'}}
