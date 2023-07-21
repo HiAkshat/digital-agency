@@ -60,8 +60,8 @@ export default function Navbar() {
 
   const {mode} = useContext(ThemeContext);
   const menuClasses = mode==="light" ?
-  "hidden absolute z-[999] flex-col gap-3 top-[80px] right-0 p-4 border border-[#111] backdrop-blur-[10px] rounded-xl" :
-  "hidden absolute z-[999] flex-col gap-3 top-[80px] right-0 p-4 border border-[#bbb] backdrop-blur-[10px] rounded-xl"
+  "hidden absolute z-[999] flex-col gap-3 top-[80px] right-0 p-4 border border-[#111] backdrop-blur-[50px] rounded-xl" :
+  "hidden absolute z-[999] flex-col gap-3 top-[80px] right-0 p-4 border border-[#bbb] backdrop-blur-[50px] rounded-xl"
 
   return (
     <div className="relative flex justify-between items-center h-[100px] ">

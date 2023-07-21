@@ -24,14 +24,14 @@ export default function Blog() {
   return (
     <div className='flex flex-col gap-6'>
       <span className={workTitleClasses}>Blog Posts</span>
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-20 md:gap-12">
         {data.map(post => (
           <Link key={post.id} href={`blog/${post.id}`}>
-            <div className="flex gap-16 items-center">
-              <div className="w-[400px] relative h-[240px]">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-16 items-center">
+              <div className="aspect-video w-[100%] md:w-[400px] relative ">
                 <Image className="object-cover" src="https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg" fill={true} />
               </div>
-              <div className="flex-1 flex flex-col gap-6">
+              <div className="flex-1 flex flex-col gap-4 md:gap-6">
                 <span className="text-3xl font-bold">{post.title}</span>
                 <span>{post.body}</span>
               </div>

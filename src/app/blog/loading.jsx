@@ -15,14 +15,12 @@ export default function BlogPost({params}) {
   return (
     <div className='flex flex-col gap-6'>
       <span className={workTitleClasses}>Blog Posts</span>
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-20 md:gap-12">
           {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="flex gap-16 items-center">
-              <div className="w-[400px] relative h-[240px]">
-                <Skeleton className="w-[full h-full" />
-              </div>
+            <div key={index} className="flex flex-col md:flex-row gap-6 md:gap-16 items-center">
+              <Skeleton className="aspect-video w-full md:w-[400px]" />
               
-              <div className="flex-1 flex flex-col gap-12">
+              <div className="w-full md:flex-1 flex flex-col gap-8 md:gap-12">
                 <div className='flex flex-col gap-6'>
                   <Skeleton className="w-full h-[40px] rounded-full" />
                   <Skeleton className="w-[90%] h-[40px] rounded-full" />
