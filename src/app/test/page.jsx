@@ -1,38 +1,49 @@
 "use client"
 
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Link from 'next/link';
 import { Skeleton } from "@/components/ui/skeleton"
-import { ThemeContext } from "../../context/ThemeContext";
-import { useContext } from "react";
-import styles from "./loading.module.css"
 
 
 export default function BlogPost({params}) {
-  const {mode} = useContext(ThemeContext);
-  const workTitleClasses = mode==="light" ?
-  `${styles.light} work-title text-8xl font-bold py-2` :
-  `${styles.dark} work-title text-8xl font-bold py-2`
-
   return (
-    <div className='flex flex-col gap-6'>
-      <span className={workTitleClasses}>Blog Posts</span>
-        <div className="flex flex-col gap-20 md:gap-12">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="flex flex-col md:flex-row gap-6 md:gap-16 items-center">
-              <Skeleton className="aspect-video w-full md:w-[400px]" />
-              
-              <div className="w-full md:flex-1 flex flex-col gap-8 md:gap-12">
-                <div className='flex flex-col gap-6'>
-                  <Skeleton className="w-full h-[40px] rounded-full" />
-                  <Skeleton className="w-[90%] h-[40px] rounded-full" />
-                </div>
-                <div className='flex flex-col gap-6'>
-                  <Skeleton className="w-full h-[20px] rounded-full" />
-                  <Skeleton className="w-[70%] h-[20px] rounded-full" />
-                </div>
-              </div>
+    <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8'>
+        <Link href="/blog">
+          <div className='flex gap-2 items-center text-[#3bad75]'>
+            <div><ArrowBackIosNewIcon /></div>
+            <span className="capitalize font-bold text-2xl">Blog Posts</span>
+          </div>
+        </Link>
+      </div>
+      <div className="flex flex-col gap-12">
+        <div className="flex flex-col-reverse lg:flex-row gap-6 items-center">
+          <div className="flex-1 flex flex-col gap-6 w-[100%]">
+            <div className='flex flex-col gap-4'>
+              <Skeleton className="w-[100%] lg:w-[400px] xl:w-[450px] h-[40px] rounded-full" />
+              <Skeleton className="w-[90%] lg:w-[400px] h-[40px] rounded-full" />
+              <Skeleton className="w-[90%] lg:w-[400px] h-[40px] rounded-full" />
             </div>
-          ))}
+            <div className="flex items-center gap-4">
+              <Skeleton className="w-[40px] h-[40px] rounded-full"/>
+              <Skeleton className="w-[100px] h-[40px] rounded-full"/>
+            </div>
+          </div>
+
+          <div className=''>
+            <Skeleton className="aspect-video h-[180px] md:min-h-[300px]"/>
+          </div>
         </div>
+
+        <div className='flex flex-col gap-6'>
+          <Skeleton className="w-full h-[30px] rounded-full" />
+          <Skeleton className="w-[95%] h-[30px] rounded-full" />
+          <Skeleton className="w-[95%] h-[30px] rounded-full" />
+          <Skeleton className="w-[95%] h-[30px] rounded-full" />
+          <Skeleton className="w-[95%] h-[30px] rounded-full" />
+        </div>
+
+      </div>
     </div>
   )
 

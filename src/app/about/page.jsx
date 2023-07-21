@@ -17,7 +17,7 @@ export default function About() {
           <span className="text-xl font-semibold">Handcrafting award winning digital experiences</span>
         </div>
       </div>
-      <div className="flex gap-24">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-24">
         <div className="flex flex-1 flex-col gap-4">
           <span className="text-3xl font-bold">Who Are We?</span>
           <p>
@@ -31,7 +31,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="flex flex-1 flex-col gap-4">
+        <div className="flex flex-1 flex-col gap-6 md:gap-4">
           <span className="text-3xl font-bold">What We Do?</span>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus

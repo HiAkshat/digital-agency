@@ -29,7 +29,7 @@ export default function BlogPost({params}) {
         </Link>
       </div>
       <div className="flex flex-col gap-12">
-        <div className="flex gap-6 items-center">
+        <div className="flex flex-col-reverse lg:flex-row gap-6 items-center">
           <div className="flex-1 flex flex-col gap-4">
             <span className="text-4xl font-bold">{data.title}</span>
             <span className="">{data.body}</span>
@@ -41,7 +41,7 @@ export default function BlogPost({params}) {
             </div>
           </div>
 
-          <div className="relative flex-1 min-h-[250px]">
+          <div className="relative aspect-video h-[180px] md:min-h-[300px]">
             <Image className="object-cover" src="https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg" fill={true} />
           </div>
         </div>
