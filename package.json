@@ -22,6 +22,8 @@
     "eslint-config-next": "13.4.9",
     "lucide-react": "^0.262.0",
     "material-symbols": "^0.10.0",
+    "mongodb": "^5.7.0",
+    "mongoose": "6.11.1",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "18.2.0",
