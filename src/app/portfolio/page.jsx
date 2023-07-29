@@ -4,11 +4,6 @@ import Img3 from "public/apps.jpg"
 import Image from "next/image"
 import GalleryBox from "@/components/galleryBox/galleryBox"
 
-export const metadata = {
-  title: 'Portfolio - AkGency',
-  description: 'A NextJS project from @HiAkshat',
-}
-
 export default function Portfolio() {
   return (
     <div className="flex flex-col gap-6">
