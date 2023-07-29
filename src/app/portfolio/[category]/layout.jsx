@@ -3,6 +3,11 @@
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Portfolio - AkGency',
+  description: 'A NextJS project from @HiAkshat',
+}
+
 export default function Layout({ children, params }) {
   return (
     <div className='flex flex-col gap-8'>

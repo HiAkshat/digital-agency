@@ -4,6 +4,10 @@ import styles from "./layout.module.css"
 import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
 
+export const metadata = {
+  title: 'Portfolio - AkGency',
+  description: 'A NextJS project from @HiAkshat',
+}
 
 export default function Layout({ children }) {
   const {mode} = useContext(ThemeContext);
